@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "target": "es6",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "outDir": "dist",
+    "experimentalDecorators": true,
+    "resolveJsonModule": true,
+    "strictNullChecks": false
+  },
+  "lib": ["es2015"],
+  "include": ["src/**/*"],
+  "exclude": ["client", "**/*.spec.ts"]
+}
