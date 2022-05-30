@@ -5,6 +5,7 @@
   "main": "app.ts",
   "scripts": {
     "start": "tsc && node dist/app.js",
+    "postinstall": "tsc",
     "start-dev": "ts-node-dev --files src/app.ts",
     "frontend": "cd client && yarn start",
     "dev": "concurrently \"yarn start-dev\" \"yarn frontend\"",
