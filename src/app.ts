@@ -21,9 +21,9 @@ export class ExpressServer extends Server {
     this.setupExpress();
     this.setupControllers();
 
-    this.app.get("*", (req, res) => {
-      res.sendFile(path.resolve("public", "index.html"));
-    });
+    // this.app.get("*", (req, res) => {
+    //   res.sendFile(path.resolve("public", "index.html"));
+    // });
   }
 
   private setupExpress(): void {
