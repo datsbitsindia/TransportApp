@@ -1,5 +1,4 @@
 import { Request, Response, NextFunction } from "express";
-import { JwtManager, ISecureRequest } from "@overnightjs/jwt";
 import jwt from "jsonwebtoken";
 import { UNAUTHORIZED } from "http-status-codes";
 var set = require("lodash.set");

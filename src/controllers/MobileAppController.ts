@@ -10,10 +10,17 @@ import { Logger } from "@overnightjs/logger";
 
 import { AddNewUser } from "./MobileAppApis/AddNewUser";
 import { LoginController } from "./MobileAppApis/LoginUser";
+import { Order } from "./MobileAppApis/Order";
+import { Employee } from "./MobileAppApis/EmployeeOrder";
 
 @Controller("api/mobile")
 @ClassOptions({ mergeParams: true })
-@ChildControllers([new AddNewUser(), new LoginController()])
+@ChildControllers([
+  new AddNewUser(),
+  new LoginController(),
+  new Order(),
+  new Employee(),
+])
 export class ParentController {
   @Get()
   private get(req: Request, res: Response) {
