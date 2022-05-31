@@ -180,7 +180,7 @@ export class Order {
     const { orderId, orderStatus } = req.body;
 
     const [error, result] = await asyncWrap(
-      runSP("U_OrderAssign", [
+      runSP("U_OrderStatus", [
         {
           name: "OrderID",
           value: orderId,
