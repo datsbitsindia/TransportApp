@@ -36,8 +36,7 @@
     "nodemailer": "^6.4.11",
     "pulldata-bet-api": "^2.0.4",
     "request": "^2.88.2",
-    "simple-color-print": "^1.0.6",
-    "typescript": "^3.8.3"
+    "simple-color-print": "^1.0.6"
   },
   "devDependencies": {
     "@types/express": "^4.17.3",
@@ -50,6 +49,7 @@
     "concurrently": "^5.1.0",
     "ts-node": "^8.6.2",
     "ts-node-dev": "^1.0.0",
-    "tslint": "^6.0.0"
+    "tslint": "^6.0.0",
+    "typescript": "^3.8.3"
   }
 }
