@@ -5,7 +5,7 @@
   "main": "app.ts",
   "scripts": {
     "build": "tsc",
-    "start": "yarn build && node dist/app.js",
+    "start": "node dist/app.js",
     "start-dev": "ts-node-dev --files src/app.ts",
     "frontend": "cd client && yarn start",
     "dev": "concurrently \"yarn start-dev\" \"yarn frontend\"",
