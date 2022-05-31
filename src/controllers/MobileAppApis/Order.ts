@@ -177,7 +177,7 @@ export class Order {
   @Post("status")
   @Middleware([verify_token])
   private async updateOrderStatus(req: any, res: any) {
-    const { orderId, assingTo, assignBy } = req.body;
+    const { orderId, orderStatus } = req.body;
 
     const [error, result] = await asyncWrap(
       runSP("U_OrderAssign", [
@@ -187,7 +187,7 @@ export class Order {
         },
         {
           name: "OrderStatus",
-          value: assignBy,
+          value: orderStatus,
         },
         {
           name: "LoginUserId",
