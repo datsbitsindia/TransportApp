@@ -116,8 +116,6 @@ export class Order {
       ])
     );
 
-    console.log(result);
-
     if (!result) {
       return res.status(INTERNAL_SERVER_ERROR).send({
         success: false,
@@ -126,8 +124,7 @@ export class Order {
     }
 
     return res.status(OK).send({
-      message: result.recordset[0].MESSAGE,
-      status: result.recordset[0].STATUS,
+      data: result.recordset,
       success: true,
     });
   }
@@ -168,8 +165,7 @@ export class Order {
     }
 
     return res.status(OK).send({
-      message: result.recordset[0].MESSAGE,
-      status: result.recordset[0].STATUS,
+      data: result.recordset,
       success: true,
     });
   }
@@ -206,8 +202,7 @@ export class Order {
     }
 
     return res.status(OK).send({
-      message: result.recordset[0].MESSAGE,
-      status: result.recordset[0].STATUS,
+      data: result.recordset,
       success: true,
     });
   }
