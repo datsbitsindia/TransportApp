@@ -38,6 +38,7 @@ let LoginController = class LoginController {
                     value: email,
                 },
             ]));
+            console.log(result);
             if (result.recordset[0].UserID !== "0") {
                 const userRecord = result.recordset[0];
                 if (passwordHash_1.compareHash(password, userRecord.Password)) {

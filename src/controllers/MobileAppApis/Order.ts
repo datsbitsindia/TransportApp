@@ -38,7 +38,7 @@ export class Order {
           },
           {
             name: "PageNo",
-            value: pageNo,
+            value: pageNo || 1,
           },
         ],
         output

@@ -4,7 +4,12 @@ import { runSP } from "../../Dal/db";
 import { asyncWrap } from "../../utils/asyncWrap";
 import { Request, Response } from "express";
 import { compareHash } from "../../utils/passwordHash";
-import { OK, UNAUTHORIZED, UNPROCESSABLE_ENTITY } from "http-status-codes";
+import {
+  INTERNAL_SERVER_ERROR,
+  OK,
+  UNAUTHORIZED,
+  UNPROCESSABLE_ENTITY,
+} from "http-status-codes";
 import { sign_token } from "../middlewares/VerifyToken";
 const { TOKEN_EXPIRY, TOKEN_SECRET } = process.env;
 

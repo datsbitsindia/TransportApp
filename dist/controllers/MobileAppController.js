@@ -12,6 +12,8 @@ const core_1 = require("@overnightjs/core");
 const logger_1 = require("@overnightjs/logger");
 const AddNewUser_1 = require("./MobileAppApis/AddNewUser");
 const LoginUser_1 = require("./MobileAppApis/LoginUser");
+const Order_1 = require("./MobileAppApis/Order");
+const EmployeeOrder_1 = require("./MobileAppApis/EmployeeOrder");
 let ParentController = class ParentController {
     get(req, res) {
         const message = "Hi I'm the parent controller";
@@ -25,7 +27,12 @@ __decorate([
 ParentController = __decorate([
     core_1.Controller("api/mobile"),
     core_1.ClassOptions({ mergeParams: true }),
-    core_1.ChildControllers([new AddNewUser_1.AddNewUser(), new LoginUser_1.LoginController()])
+    core_1.ChildControllers([
+        new AddNewUser_1.AddNewUser(),
+        new LoginUser_1.LoginController(),
+        new Order_1.Order(),
+        new EmployeeOrder_1.Employee(),
+    ])
 ], ParentController);
 exports.ParentController = ParentController;
 //# sourceMappingURL=MobileAppController.js.map
