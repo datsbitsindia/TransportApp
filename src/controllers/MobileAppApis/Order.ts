@@ -30,11 +30,11 @@ export class Order {
         [
           {
             name: "OrderStatus",
-            value: orderStatus,
+            value: orderStatus || 0 ,
           },
           {
             name: "LoginUserID",
-            value: req.userID,
+            value: req.userId,
           },
           {
             name: "PageNo",
@@ -111,7 +111,7 @@ export class Order {
         },
         {
           name: "LoginUserId",
-          value: req.userID,
+          value: req.userId,
         },
       ])
     );
@@ -153,7 +153,7 @@ export class Order {
         },
         {
           name: "LoginUserId",
-          value: req.userID,
+          value: req.userId,
         },
       ])
     );
@@ -191,7 +191,7 @@ export class Order {
         },
         {
           name: "LoginUserId",
-          value: req.userID,
+          value: req.userId,
         },
       ])
     );

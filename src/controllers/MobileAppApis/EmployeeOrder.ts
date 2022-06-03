@@ -38,7 +38,7 @@ export class Employee {
           },
           {
             name: "LoginUserID",
-            value: req.userID,
+            value: req.userId,
           },
           {
             name: "PageNo",
