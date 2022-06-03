@@ -55,7 +55,7 @@ export class AddNewUser {
       ])
     );
 
-    console.log(result);
+    console.log(result.recordsets);
 
     if (!result) {
       return res.status(INTERNAL_SERVER_ERROR).send({
@@ -65,9 +65,9 @@ export class AddNewUser {
     }
 
     return res.status(OK).send({
-      data: result.recordsets[1],
-      message: result.recordsets[0].MESSAGE,
-      status : result.recordsets[0].STATUS,
+      data: result.recordsets[1][0],
+      message: result.recordset[0].MESSAGE,
+      status : result.recordset[0].STATUS,
       success: true,
     });
   }

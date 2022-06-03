@@ -17,7 +17,7 @@ export class Employee {
   @Get("order")
   @Middleware([verify_token])
   private async getEmployeeOrder(req: any, res: any) {
-    const { empUserId, pageNo } = req.query;
+    const { empUserId, pageNo } = req.body;
 
     const output = {
       name: "TotalCnt",
@@ -34,15 +34,11 @@ export class Employee {
           },
           {
             name: "EmpUserID",
-            value: empUserId,
-          },
-          {
-            name: "LoginUserID",
-            value: req.userId,
+            value: +empUserId,
           },
           {
             name: "PageNo",
-            value: pageNo,
+            value: pageNo || 1,
           },
         ],
         output
