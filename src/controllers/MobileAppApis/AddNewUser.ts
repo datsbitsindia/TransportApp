@@ -65,6 +65,7 @@ export class AddNewUser {
     }
 
     return res.status(OK).send({
+      data: result.recordsets,
       message: result.recordset[0].MESSAGE,
       status: result.recordset[0].STATUS,
       success: true,
