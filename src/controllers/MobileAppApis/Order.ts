@@ -30,7 +30,7 @@ export class Order {
         [
           {
             name: "OrderStatus",
-            value: orderStatus || 0 ,
+            value: orderStatus || 0,
           },
           {
             name: "LoginUserID",
@@ -141,19 +141,19 @@ export class Order {
       runSP("U_OrderAssign", [
         {
           name: "OrderID",
-          value: orderId,
+          value: +orderId,
         },
         {
           name: "AssignBy",
-          value: assignBy,
+          value: +req.userId,
         },
         {
           name: "AssignTo",
-          value: assingTo,
+          value: +assingTo,
         },
         {
           name: "LoginUserId",
-          value: req.userId,
+          value: +req.userId,
         },
       ])
     );
