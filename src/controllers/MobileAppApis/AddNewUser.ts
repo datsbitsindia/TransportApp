@@ -64,6 +64,15 @@ export class AddNewUser {
       });
     }
 
+    if(result.recordset[0].STATUS === -1){
+      return res.status(OK).send({
+        // data: result?.recordsets[1][0],
+        message: result.recordset[0].MESSAGE,
+        status : result.recordset[0].STATUS,
+        success: true,
+      });
+    }
+
     return res.status(OK).send({
       data: result?.recordsets[1][0],
       message: result.recordset[0].MESSAGE,
