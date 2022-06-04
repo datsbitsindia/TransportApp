@@ -57,7 +57,7 @@ export class Order {
     return res.status(OK).send({
       code: 1,
       success: true,
-      data: result.recordset,
+      data: result.recordset[0],
       totalCount: result.output.TotalCnt,
     });
   }
@@ -124,7 +124,7 @@ export class Order {
     }
 
     return res.status(OK).send({
-      data: result.recordset,
+      data: result.recordset[0],
       success: true,
     });
   }
@@ -165,7 +165,7 @@ export class Order {
     }
 
     return res.status(OK).send({
-      data: result.recordset,
+      data: result.recordset[0],
       success: true,
     });
   }
@@ -202,7 +202,7 @@ export class Order {
     }
 
     return res.status(OK).send({
-      data: result.recordset,
+      data: result.recordset[0],
       success: true,
     });
   }

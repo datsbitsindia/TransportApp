@@ -63,13 +63,15 @@ export class LoginController {
         return res.status(OK).send({
           code: 1,
           message: "User verified successfully",
-          token,
-          userRole: userRecord.UserTypeID,
-          userType: userRecord.UserType,
-          fullName: userRecord.FullName,
-          email: userRecord.Email,
-          mobile: userRecord.MobileNo,
-          userId: userRecord.UserID,
+          data: {
+            userRole: userRecord.UserTypeID,
+            userType: userRecord.UserType,
+            fullName: userRecord.FullName,
+            email: userRecord.Email,
+            mobile: userRecord.MobileNo,
+            userId: userRecord.UserID,
+            token: token,
+          },
         });
       }
     }

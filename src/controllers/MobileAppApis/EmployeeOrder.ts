@@ -57,7 +57,7 @@ export class Employee {
     return res.status(OK).send({
       code: 1,
       success: true,
-      data: result.recordset,
+      data: result.recordset[0],
       totalCount: result.output.TotalCnt,
     });
   }
