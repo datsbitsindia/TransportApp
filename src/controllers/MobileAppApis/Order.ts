@@ -124,7 +124,8 @@ export class Order {
     }
 
     return res.status(OK).send({
-      data: result.recordset[0],
+      message: result.recordset[0].MESSAGE,
+      status: result.recordset[0].STATUS,
       success: true,
     });
   }
@@ -165,7 +166,8 @@ export class Order {
     }
 
     return res.status(OK).send({
-      data: result.recordset[0],
+      message: result.recordset[0].MESSAGE,
+      status: result.recordset[0].STATUS,
       success: true,
     });
   }
@@ -202,7 +204,8 @@ export class Order {
     }
 
     return res.status(OK).send({
-      data: result.recordset[0],
+      message: result.recordset[0].MESSAGE,
+      status: result.recordset[0].STATUS,
       success: true,
     });
   }

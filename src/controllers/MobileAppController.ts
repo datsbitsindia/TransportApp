@@ -12,6 +12,7 @@ import { AddNewUser } from "./MobileAppApis/AddNewUser";
 import { LoginController } from "./MobileAppApis/LoginUser";
 import { Order } from "./MobileAppApis/Order";
 import { Employee } from "./MobileAppApis/EmployeeOrder";
+import { Users } from "./MobileAppApis/Users";
 
 @Controller("api/mobile")
 @ClassOptions({ mergeParams: true })
@@ -20,6 +21,7 @@ import { Employee } from "./MobileAppApis/EmployeeOrder";
   new LoginController(),
   new Order(),
   new Employee(),
+  new Users(),
 ])
 export class ParentController {
   @Get()

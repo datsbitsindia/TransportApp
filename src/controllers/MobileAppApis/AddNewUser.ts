@@ -8,6 +8,8 @@ import {
 import { runSP } from "../../Dal/db";
 import { asyncWrap } from "../../utils/asyncWrap";
 import { hashPassword } from "../../utils/passwordHash";
+import { sign_token } from "../middlewares/VerifyToken";
+const { TOKEN_EXPIRY, TOKEN_SECRET } = process.env;
 
 @Controller("addNewUser")
 @ClassOptions({ mergeParams: true })
@@ -64,19 +66,49 @@ export class AddNewUser {
       });
     }
 
-    if(result.recordset[0].STATUS === -1){
+    if (result.recordset[0].STATUS === -1) {
       return res.status(OK).send({
         // data: result?.recordsets[1][0],
         message: result.recordset[0].MESSAGE,
-        status : result.recordset[0].STATUS,
+        status: result.recordset[0].STATUS,
         success: true,
       });
     }
 
+    const userRecord = result.data.recordsets[1][0];
+    const [tokenError, token] = await asyncWrap(
+      sign_token(
+        {
+          userId: userRecord.UserID,
+          userRole: userRecord.UserTypeID,
+          userType: userRecord.UserType,
+          fullName: userRecord.FullName,
+          email: userRecord.Email,
+          mobile: userRecord.MobileNo,
+        },
+        {
+          expiresIn: TOKEN_EXPIRY,
+          secret: TOKEN_SECRET,
+        }
+      )
+    );
+
+    if (error) return res.sendStatus(UNPROCESSABLE_ENTITY);
+
+    const data = {
+      userId: userRecord.UserID,
+      userRole: userRecord.UserTypeID,
+      userType: userRecord.UserType,
+      fullName: userRecord.FullName,
+      email: userRecord.Email,
+      mobile: userRecord.MobileNo,
+      token: token,
+    };
+    
     return res.status(OK).send({
-      data: result?.recordsets[1][0],
+      data: data,
       message: result.recordset[0].MESSAGE,
-      status : result.recordset[0].STATUS,
+      status: result.recordset[0].STATUS,
       success: true,
     });
   }
